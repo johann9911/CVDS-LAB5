@@ -12,6 +12,9 @@ import com.google.gson.Gson;
 
 import edu.eci.cvds.servlet.model.Todo;
 
+@WebServlet(
+        urlPatterns = "/servicesWeb"
+)
 public class Service extends HttpServlet{
 
   @Override
