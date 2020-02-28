@@ -3,10 +3,19 @@ package edu.eci.cvds.servlet;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Writer;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
@@ -16,16 +25,24 @@ import edu.eci.cvds.servlet.model.Todo;
         urlPatterns = "/servicesWeb"
 )
 public class Service extends HttpServlet{
-
+	private ArrayList<Todo> todos = new ArrayList<Todo>();
+	
+	
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       Writer responseWriter = resp.getWriter();
-       Optional<String> optId = Optional.ofNullable(req.getParameter("id"));
-       String id = optId.isPresent() && !optId.get().isEmpty() ? optId.get() : "1";
-
-       resp.setStatus(HttpServletResponse.SC_OK);
-       responseWriter.write("Hello" + id + "!");
-       responseWriter.flush();
+	  try {
+          Writer responseWriter = resp.getWriter();
+          Optional <Integer> optId = Optional.ofNullable(Integer.parseInt(req.getParameter("id")));
+          Integer id = optId.isPresent() ? optId.get():1;
+          todos.add(getTodo(id));
+          resp.setStatus(HttpServletResponse.SC_OK);
+          responseWriter.write(todosToHTMLTable(todos));
+          responseWriter.flush();
+	  }catch (MalformedURLException e){
+          resp.setStatus(HttpServletResponse.SC_CONFLICT);
+      }catch (IOException e){
+          resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+      }
    }
 
    public static Todo getTodo(int id) throws MalformedURLException, IOException {

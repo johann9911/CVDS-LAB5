@@ -1,13 +1,19 @@
+package edu.eci.cvds.servlet.model;
 
 
 
 public class Todo{
 	
-	private int userId = 1;
-    private int id = 1 ;
-    private String title = " delectus aut autem ";
-    private boolean completed = false;
-
+	private int userId;
+    private int id ;
+    private String title;
+    private boolean completed;
+    public Todo (){
+        userId = 1;
+        id = 1;
+        title = " delectus aut autem ";
+        completed = false;
+    }
 
      public int getUserId() {
         return userId;
@@ -40,5 +46,4 @@ public class Todo{
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-}
 }
