@@ -50,10 +50,10 @@ Access-Control-Allow-Credentials: true
 # PARTE DOS
 
 ### Usando GET 
--lleva los datos de forma visible al cliente
--El medio de envio es la url
+- lleva los datos de forma visible al cliente
+- El medio de envio es la url
 
 ### Usando POST
--Consiste en datos ocultos enviados por un formulario cuyo metodo es post
--es adecuado para formularios
--los datos no son visbles
+- Consiste en datos ocultos enviados por un formulario cuyo metodo es post
+- Es adecuado para formularios
+- Los datos no son visbles
