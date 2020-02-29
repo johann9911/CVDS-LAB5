@@ -1,13 +1,14 @@
 package edu.eci.cvds.servlet.model;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import java.util.Random;
 
 import javax.faces.bean.ApplicationScoped;
 
-@ApplicationScoped
 @ManagedBean(name = "guessBean")
+@SessionScoped
 public class Bean {
 
 	private int numero;

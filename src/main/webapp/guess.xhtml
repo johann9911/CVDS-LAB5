@@ -8,10 +8,15 @@
      <div align="center">
  		<h:form id="guess_form">
 				<p:outputLabel id = "numero" value="#{guessBean.numero}" style="display:none"/>
-				Numero:<p:inputText  id= "intento" type="int" binding="#{input}" >
+				<br/>
+				Numero:<p:inputText  id= "intento" type="int" binding="#{input}"/>
+				<br/>
 				<p:outputLabel id = "numeroIntentos" value="#{guessBean.numeroIntentos}"/>
+				<br/>
 				<p:outputLabel id = "estado" value="#{guessBean.estado}"/>
+				<br/>
 				<p:outputLabel id = "premio" value="#{guessBean.premio}"/>
+				<br/>
 				
  		</h:form>
  		 <p:commandButton value="Submit" update="guess_form"  actionListener="#{guessBean.guess(input.value)}" />
