@@ -7,6 +7,15 @@
  <h:body>
      <div align="center">
          <p:panel id="panel" header="Juego de Adivinanza" style="margin-bottom:10px; width:500px;">
-	  </div>
+            <h:body>
+ 			<h:form id="guess_form">
+				<p:outputLabel id = "numero" value="#{guessBean.numero}" style="display:none"/>
+				Numero:<p:inputText  id= "intento" type="int" binding="#{input}" >
+				<p:outputLabel id = "numeroIntentos" value="#{guessBean.numeroIntentos}"/>
+				<p:outputLabel id = "estado" value="#{guessBean.estado}"/>
+				<p:outputLabel id = "premio" value="#{guessBean.premio}"/>
+ 			</h:form>
+			</h:body>
+	 </div>
  </h:body>
  </html>
