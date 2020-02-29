@@ -57,3 +57,7 @@ Access-Control-Allow-Credentials: true
 - Consiste en datos ocultos enviados por un formulario cuyo metodo es post
 - Es adecuado para formularios
 - Los datos no son visbles
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c42353620eed40daaf4102f82214411e)](https://app.codacy.com/manual/johann9911/CVDS-LAB5/dashboard)
+
+[![CircleCI](https://circleci.com/gh/PDSW-ECI/base-proyectos.svg?style=svg)](https://circleci.com/gh/johann9911/workflows/CVDS-LAB5)
