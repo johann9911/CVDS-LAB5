@@ -6,10 +6,25 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-	<form  action="/servicesWeb" method="post">
+	<form  name= "form" action="/servicesWeb" method="get">
 	  numero: <input type="text" id="id" name="id"><br>
-	  <input type="submit" value="Aceptar">
+	  <input type="submit" value="Aceptar" onclick="funcion()"">
+	  <p id="demo"></p>
 	</form>
-		
+	
+	<script>
+	function funcion() {
+  	var x, text;
+  		x = document.getElementById("id").value;
+
+  		if (isNaN(x)) {
+    	text = "Input not valid";
+  		} else {
+    	text = "Input OK";
+  		}
+  		document.getElementById("demo").innerHTML = text;
+  		wait(100)
+	}	
+	</script>
     </body>
 </html>
